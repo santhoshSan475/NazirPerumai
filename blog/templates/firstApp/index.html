@@ -1,0 +1,18 @@
+{% extends 'firstApp/base.html' %}
+{% block content %}
+<div class="card">
+     {% load static %}
+    <img src="{% static 'myApp/download.jpeg' %}" alt="Card Image" height="150px" width="150px" style="border-radius:5px;">
+      <div class="card-content">
+        <h3>{{ name | upper }}</h3>
+        <p> {{ value | truncatewords:1 }} </p>
+        <p>{{ description | truncatechars:50 }}</p>
+        <p>{{ description | length }}</p>
+        <p>{{ description | slice:"4:10" }}</p>
+        <p>{{ description | cut:"o"}}</p>
+
+        <a href="{% url 'about' %}">Read More</a>
+      </div>
+</div>
+
+{% endblock %}
